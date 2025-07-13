@@ -54,6 +54,11 @@ A nostalgic recreation of the classic Windows 98 desktop interface built with Re
 ## 📁 Project Structure
 
 ```
+
+public/
+├── images/
+│   ├── background.png
+│   ├── logo.png
 src/
 ├── components/
 │   ├── windows/
