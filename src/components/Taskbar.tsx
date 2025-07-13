@@ -19,7 +19,13 @@ const Taskbar: React.FC<TaskbarProps> = ({
   };
 
   return (
-    <div className="absolute bottom-0 left-0 right-0 h-10 bg-gray-300 border-t-2 border-white border-l-2 border-l-white border-r-2 border-r-gray-600 border-b-2 border-b-gray-600 flex items-center px-1">
+    <div
+      className="absolute bottom-0 left-0 right-0 h-10   flex items-center px-1"
+      style={{
+        background: "rgb(192, 192, 192)",
+        borderColor: "rgb(236, 236, 236)",
+      }}
+    >
       {/* Start Button */}
       <button
         className={`h-8 px-3 mr-2 text-sm font-bold flex items-center border-2 ${
@@ -28,18 +34,17 @@ const Taskbar: React.FC<TaskbarProps> = ({
             : "border-white border-t-white border-l-white border-r-gray-600 border-b-gray-600 bg-gray-300 hover:bg-gray-200"
         }`}
         onClick={onStartClick}
-        style={{ fontFamily: "MS Sans Serif, sans-serif" }}
+        style={{
+          fontFamily: "MS Sans Serif, sans-serif",
+          background: "rgb(192, 192, 192)",
+        }}
       >
         <div className="w-4 h-4 mr-2 flex items-center justify-center text-white text-xs font-bold border-gray-400">
           {
             /* <span style={{ fontSize: '10px' }}>⊞</span>
              */
 
-            <img
-              src="/images/logo.png"
-              alt="start logo"
-              className="h-5"
-            />
+            <img src="/images/logo.png" alt="start logo" className="h-5" />
           }
         </div>
         Start
