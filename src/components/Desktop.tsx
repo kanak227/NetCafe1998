@@ -1,5 +1,11 @@
 import React from "react";
 import DesktopIcon from "./DesktopIcon";
+import Desklet from "./Desklet";
+import { Computer, RecycleFull, Globe } from "@react95/icons";
+import {
+  Notepad as NotepadIcon,
+  Calculator as CalculatorIcon,
+} from "@react95/icons";
 import { useWindows } from "../contexts/WindowContext";
 import MyComputer from "./windows/MyComputer";
 import RecycleBin from "./windows/RecycleBin";
@@ -113,151 +119,34 @@ const Desktop: React.FC = () => {
         backgroundPosition: "center",
       }}
     >
-      <DesktopIcon
+      <Desklet
         initialX={20}
         initialY={20}
-        icon={
-          <div
-            className="w-8 h-8 relative"
-            style={{ imageRendering: "pixelated" }}
-          >
-            {/* My Computer - Classic desktop computer */}
-            <div className="absolute inset-0">
-              {/* Monitor */}
-              <div className="w-6 h-4 bg-gray-300 border border-black absolute top-0 left-1">
-                <div className="w-4 h-2 bg-blue-600 m-0.5"></div>
-              </div>
-              {/* Base */}
-              <div className="w-4 h-1 bg-gray-400 border border-black absolute top-4 left-2"></div>
-              {/* CPU */}
-              <div className="w-3 h-3 bg-gray-200 border border-black absolute top-5 left-0">
-                <div className="w-1 h-1 bg-green-400 absolute top-0.5 left-0.5"></div>
-                <div className="w-1 h-0.5 bg-gray-600 absolute bottom-0.5 left-0.5"></div>
-              </div>
-            </div>
-          </div>
-        }
-        label="My Computer"
+        icon={Computer}
+        label={"My Computer"}
         onDoubleClick={handleMyComputerOpen}
       />
 
-      <DesktopIcon
+      <Desklet
         initialX={20}
         initialY={120}
-        icon={
-          <div
-            className="w-8 h-8 relative"
-            style={{ imageRendering: "pixelated" }}
-          >
-            {/* Recycle Bin */}
-            <div className="absolute inset-0">
-              {/* Bin body */}
-              <div className="w-6 h-5 bg-gray-400 border border-black absolute bottom-0 left-1">
-                <div className="w-4 h-3 bg-gray-300 absolute top-1 left-1"></div>
-              </div>
-              {/* Bin lid */}
-              <div className="w-6 h-1 bg-gray-500 border border-black absolute top-2 left-1"></div>
-              {/* Handle */}
-              <div className="w-2 h-1 bg-gray-600 border border-black absolute top-1 left-3"></div>
-              {/* Papers */}
-              <div className="w-1 h-2 bg-white border-r border-black absolute top-3 left-2"></div>
-              <div className="w-1 h-1 bg-yellow-200 border-r border-black absolute top-3 left-3"></div>
-            </div>
-          </div>
-        }
+        icon={RecycleFull}
         label="Recycle Bin"
         onDoubleClick={handleRecycleBinOpen}
       />
 
-      <DesktopIcon
+      <Desklet
         initialX={20}
         initialY={220}
-        icon={
-          <div
-            className="w-8 h-8 relative"
-            style={{ imageRendering: "pixelated" }}
-          >
-            {/* Notepad */}
-            <div className="absolute inset-0">
-              {/* Document */}
-              <div className="w-6 h-7 bg-white border border-black absolute top-0 left-1">
-                {/* Blue title bar */}
-                <div className="w-full h-1 bg-blue-600"></div>
-                {/* Text lines */}
-                <div className="w-4 h-0.5 bg-black absolute top-2 left-0.5"></div>
-                <div className="w-3 h-0.5 bg-black absolute top-3 left-0.5"></div>
-                <div className="w-4 h-0.5 bg-black absolute top-4 left-0.5"></div>
-                <div className="w-2 h-0.5 bg-black absolute top-5 left-0.5"></div>
-              </div>
-              {/* Folded corner */}
-              <div className="w-1 h-1 bg-gray-300 border-l border-b border-black absolute top-0 right-1"></div>
-            </div>
-          </div>
-        }
+        icon={NotepadIcon}
         label="Notepad"
         onDoubleClick={handleNotepadOpen}
       />
 
-      <DesktopIcon
-        initialX={20}
-        initialY={320}
-        icon={
-          <div
-            className="w-8 h-8 relative"
-            style={{ imageRendering: "pixelated" }}
-          >
-            {/* Calculator */}
-            <div className="absolute inset-0">
-              {/* Calculator body */}
-              <div className="w-6 h-7 bg-gray-300 border border-black absolute top-0 left-1">
-                {/* Display */}
-                <div className="w-4 h-1 bg-black absolute top-0.5 left-1"></div>
-                {/* Buttons grid */}
-                <div className="grid grid-cols-3 gap-0 absolute top-2 left-1 w-4 h-4">
-                  <div className="w-1 h-1 bg-gray-200 border border-gray-600"></div>
-                  <div className="w-1 h-1 bg-gray-200 border border-gray-600"></div>
-                  <div className="w-1 h-1 bg-gray-200 border border-gray-600"></div>
-                  <div className="w-1 h-1 bg-gray-200 border border-gray-600"></div>
-                  <div className="w-1 h-1 bg-gray-200 border border-gray-600"></div>
-                  <div className="w-1 h-1 bg-gray-200 border border-gray-600"></div>
-                  <div className="w-1 h-1 bg-gray-200 border border-gray-600"></div>
-                  <div className="w-1 h-1 bg-gray-200 border border-gray-600"></div>
-                  <div className="w-1 h-1 bg-gray-200 border border-gray-600"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        }
-        label="Calculator"
-        onDoubleClick={handleCalculatorOpen}
-      />
-
-      <DesktopIcon
+      <Desklet
         initialX={120}
         initialY={20}
-        icon={
-          <div
-            className="w-8 h-8 relative"
-            style={{ imageRendering: "pixelated" }}
-          >
-            {/* Internet Explorer */}
-            <div className="absolute inset-0">
-              {/* Main icon background */}
-              <div className="w-6 h-6 bg-blue-600 border border-black absolute top-1 left-1 rounded-sm">
-                {/* "e" letter */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-white font-bold text-sm leading-none">
-                    e
-                  </div>
-                </div>
-                {/* Ring around e */}
-                <div className="absolute inset-0 border-2 border-blue-300 rounded-sm"></div>
-              </div>
-              {/* Yellow accent */}
-              <div className="w-2 h-2 bg-yellow-400 border border-black absolute top-0 right-1 rounded-sm"></div>
-            </div>
-          </div>
-        }
+        icon={Globe}
         label="Internet Explorer"
         onDoubleClick={handleInternetExplorerOpen}
       />
