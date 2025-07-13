@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Windows 98 Font */
+@import url('https://fonts.googleapis.com/css2?family=MS+Sans+Serif:wght@400;700&display=swap');
+
+body {
+  font-family: 'MS Sans Serif', 'Tahoma', sans-serif;
+  font-size: 11px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Custom Windows 98 Button Styles */
+.win98-button {
+  background: #c0c0c0;
+  border: 2px outset #c0c0c0;
+  font-family: 'MS Sans Serif', sans-serif;
+  font-size: 11px;
+  padding: 2px 8px;
+  cursor: pointer;
+}
+
+.win98-button:hover {
+  background: #d4d0c8;
+}
+
+.win98-button:active {
+  border: 2px inset #c0c0c0;
+  background: #a0a0a0;
+}
+
+.win98-inset {
+  border: 2px inset #c0c0c0;
+  background: #c0c0c0;
+}
+
+.win98-outset {
+  border: 2px outset #c0c0c0;
+  background: #c0c0c0;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 16px;
+}
+
+::-webkit-scrollbar-track {
+  background: #c0c0c0;
+  border: 1px inset #c0c0c0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c0c0c0;
+  border: 1px outset #c0c0c0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d4d0c8;
+}
