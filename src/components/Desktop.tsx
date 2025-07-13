@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import DesktopIcon from "./DesktopIcon";
 import Desklet from "./Desklet";
 import { Computer, RecycleFull, Globe } from "@react95/icons";
@@ -108,6 +108,29 @@ const Desktop: React.FC = () => {
       maximized: false,
     });
   };
+
+  const [isLargeDevice, setIsLargeDevice] = useState(false);
+
+  useEffect(() => {
+    const checkDevice = () => {
+      setIsLargeDevice(window.innerWidth >= 1024);
+    };
+
+    checkDevice(); // check on mount
+
+    window.addEventListener("resize", checkDevice);
+    return () => window.removeEventListener("resize", checkDevice);
+  }, []);
+
+  if (!isLargeDevice) {
+    return (
+      <div className="flex items-center justify-center min-h-screen bg-gray-100">
+        <div className="text-center text-red-600 text-xl font-semibold">
+          This simulation is not compatible with this device.
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div
