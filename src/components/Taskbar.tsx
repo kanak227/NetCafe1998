@@ -1,5 +1,5 @@
-import React from 'react';
-import { useWindows } from '../contexts/WindowContext';
+import React from "react";
+import { useWindows } from "../contexts/WindowContext";
 
 interface TaskbarProps {
   onStartClick: () => void;
@@ -7,11 +7,15 @@ interface TaskbarProps {
   startMenuOpen: boolean;
 }
 
-const Taskbar: React.FC<TaskbarProps> = ({ onStartClick, currentTime, startMenuOpen }) => {
+const Taskbar: React.FC<TaskbarProps> = ({
+  onStartClick,
+  currentTime,
+  startMenuOpen,
+}) => {
   const { windows, focusWindow, minimizeWindow } = useWindows();
 
   const formatTime = (date: Date) => {
-    return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    return date.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
   };
 
   return (
@@ -19,15 +23,24 @@ const Taskbar: React.FC<TaskbarProps> = ({ onStartClick, currentTime, startMenuO
       {/* Start Button */}
       <button
         className={`h-8 px-3 mr-2 text-sm font-bold flex items-center border-2 ${
-          startMenuOpen 
-            ? 'border-gray-600 border-t-gray-800 border-l-gray-800 bg-gray-200' 
-            : 'border-white border-t-white border-l-white border-r-gray-600 border-b-gray-600 bg-gray-300 hover:bg-gray-200'
+          startMenuOpen
+            ? "border-gray-600 border-t-gray-800 border-l-gray-800 bg-gray-200"
+            : "border-white border-t-white border-l-white border-r-gray-600 border-b-gray-600 bg-gray-300 hover:bg-gray-200"
         }`}
         onClick={onStartClick}
-        style={{ fontFamily: 'MS Sans Serif, sans-serif' }}
+        style={{ fontFamily: "MS Sans Serif, sans-serif" }}
       >
-        <div className="w-4 h-4 mr-2 flex items-center justify-center text-white text-xs font-bold bg-gradient-to-br from-red-500 to-yellow-500 border border-gray-400">
-          <span style={{ fontSize: '10px' }}>⊞</span>
+        <div className="w-4 h-4 mr-2 flex items-center justify-center text-white text-xs font-bold border-gray-400">
+          {
+            /* <span style={{ fontSize: '10px' }}>⊞</span>
+             */
+
+            <img
+              src="../../public/images/logo.png"
+              alt="start logo"
+              className="h-5"
+            />
+          }
         </div>
         Start
       </button>
@@ -37,16 +50,18 @@ const Taskbar: React.FC<TaskbarProps> = ({ onStartClick, currentTime, startMenuO
 
       {/* Window Buttons */}
       <div className="flex-1 flex gap-1">
-        {windows.filter(w => !w.minimized).map(window => (
-          <button
-            key={window.id}
-            className="h-8 px-3 text-sm border-2 border-white border-t-white border-l-white border-r-gray-600 border-b-gray-600 bg-gray-300 hover:bg-gray-200 truncate max-w-40"
-            onClick={() => focusWindow(window.id)}
-            style={{ fontFamily: 'MS Sans Serif, sans-serif' }}
-          >
-            {window.title}
-          </button>
-        ))}
+        {windows
+          .filter((w) => !w.minimized)
+          .map((window) => (
+            <button
+              key={window.id}
+              className="h-8 px-3 text-sm border-2 border-white border-t-white border-l-white border-r-gray-600 border-b-gray-600 bg-gray-300 hover:bg-gray-200 truncate max-w-40"
+              onClick={() => focusWindow(window.id)}
+              style={{ fontFamily: "MS Sans Serif, sans-serif" }}
+            >
+              {window.title}
+            </button>
+          ))}
       </div>
 
       {/* System Tray */}
@@ -57,7 +72,10 @@ const Taskbar: React.FC<TaskbarProps> = ({ onStartClick, currentTime, startMenuO
       </div>
 
       {/* Clock */}
-      <div className="h-8 px-3 border-2 border-gray-600 border-t-gray-800 border-l-gray-800 border-r-white border-b-white bg-gray-200 flex items-center text-sm" style={{ fontFamily: 'MS Sans Serif, sans-serif' }}>
+      <div
+        className="h-8 px-3 border-2 border-gray-600 border-t-gray-800 border-l-gray-800 border-r-white border-b-white bg-gray-200 flex items-center text-sm"
+        style={{ fontFamily: "MS Sans Serif, sans-serif" }}
+      >
         {formatTime(currentTime)}
       </div>
     </div>
