@@ -79,17 +79,17 @@ const Window: React.FC<WindowProps> = ({ window }) => {
   return (
     <div
       ref={windowRef}
-      className="absolute bg-gray-300 border-2 border-white border-r-gray-600 border-b-gray-600 shadow-md"
+      className={`absolute bg-gray-300 border-2 border-white border-r-gray-600 border-b-gray-600 shadow-md z-[${window.zIndex}]`}
       style={{
         left: window.x,
         top: window.y,
         width: window.width,
         height: window.height,
-        zIndex: window.zIndex,
         fontFamily: 'MS Sans Serif, sans-serif',
       }}
       onMouseDown={() => focusWindow(window.id)}
-    >
+>
+
       {/* Title Bar */}
       <div
         className="window-header h-8 bg-gradient-to-r from-blue-800 to-blue-600 text-white flex items-center justify-between px-2 cursor-move select-none"

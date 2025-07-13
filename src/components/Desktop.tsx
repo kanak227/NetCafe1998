@@ -111,7 +111,7 @@ const Desktop: React.FC = () => {
 
   return (
     <div
-      className="absolute inset-0 p-4"
+      className="absolute inset-0 p-4 z-0"
       style={{
         backgroundImage: 'url("/images/background.png")',
         backgroundRepeat: "no-repeat",
