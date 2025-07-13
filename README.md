@@ -34,7 +34,7 @@ A nostalgic recreation of the classic Windows 98 desktop interface built with Re
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/kanak227/NetCafe2005.git
    cd project
    ```
 
