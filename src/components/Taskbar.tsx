@@ -36,7 +36,7 @@ const Taskbar: React.FC<TaskbarProps> = ({
              */
 
             <img
-              src="../../public/images/logo.png"
+              src="/images/logo.png"
               alt="start logo"
               className="h-5"
             />
