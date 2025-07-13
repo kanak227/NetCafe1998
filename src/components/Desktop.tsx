@@ -151,6 +151,14 @@ const Desktop: React.FC = () => {
         onDoubleClick={handleInternetExplorerOpen}
       />
 
+      <Desklet
+        initialX={20}
+        initialY={320}
+        icon={CalculatorIcon}
+        label="Calculator"
+        onDoubleClick={handleCalculatorOpen}
+      />
+
       <DesktopIcon
         initialX={120}
         initialY={120}
