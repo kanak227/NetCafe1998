@@ -1,20 +1,20 @@
-import React from 'react';
-import DesktopIcon from './DesktopIcon';
-import { useWindows } from '../contexts/WindowContext';
-import MyComputer from './windows/MyComputer';
-import RecycleBin from './windows/RecycleBin';
-import Notepad from './windows/Notepad';
-import Calculator from './windows/Calculator';
-import InternetExplorer from './windows/InternetExplorer';
-import Games from './windows/Games';
-import YahooMessenger from './windows/YahooMessenger';
+import React from "react";
+import DesktopIcon from "./DesktopIcon";
+import { useWindows } from "../contexts/WindowContext";
+import MyComputer from "./windows/MyComputer";
+import RecycleBin from "./windows/RecycleBin";
+import Notepad from "./windows/Notepad";
+import Calculator from "./windows/Calculator";
+import InternetExplorer from "./windows/InternetExplorer";
+import Games from "./windows/Games";
+import YahooMessenger from "./windows/YahooMessenger";
 
 const Desktop: React.FC = () => {
   const { openWindow } = useWindows();
 
   const handleMyComputerOpen = () => {
     openWindow({
-      title: 'My Computer',
+      title: "My Computer",
       content: <MyComputer />,
       x: 100,
       y: 100,
@@ -27,7 +27,7 @@ const Desktop: React.FC = () => {
 
   const handleRecycleBinOpen = () => {
     openWindow({
-      title: 'Recycle Bin',
+      title: "Recycle Bin",
       content: <RecycleBin />,
       x: 150,
       y: 150,
@@ -40,7 +40,7 @@ const Desktop: React.FC = () => {
 
   const handleNotepadOpen = () => {
     openWindow({
-      title: 'Untitled - Notepad',
+      title: "Untitled - Notepad",
       content: <Notepad />,
       x: 200,
       y: 200,
@@ -53,7 +53,7 @@ const Desktop: React.FC = () => {
 
   const handleCalculatorOpen = () => {
     openWindow({
-      title: 'Calculator',
+      title: "Calculator",
       content: <Calculator />,
       x: 250,
       y: 250,
@@ -66,7 +66,7 @@ const Desktop: React.FC = () => {
 
   const handleInternetExplorerOpen = () => {
     openWindow({
-      title: 'Internet Explorer',
+      title: "Internet Explorer",
       content: <InternetExplorer />,
       x: 120,
       y: 80,
@@ -79,7 +79,7 @@ const Desktop: React.FC = () => {
 
   const handleGamesOpen = () => {
     openWindow({
-      title: 'Games',
+      title: "Games",
       content: <Games />,
       x: 180,
       y: 120,
@@ -92,7 +92,7 @@ const Desktop: React.FC = () => {
 
   const handleYahooMessengerOpen = () => {
     openWindow({
-      title: 'Yahoo! Messenger',
+      title: "Yahoo! Messenger",
       content: <YahooMessenger />,
       x: 300,
       y: 150,
@@ -104,12 +104,23 @@ const Desktop: React.FC = () => {
   };
 
   return (
-    <div className="absolute inset-0 p-4" style={{ background: 'linear-gradient(45deg, #008080 0%, #20b2aa 100%)' }}>
+    <div
+      className="absolute inset-0 p-4"
+      style={{
+        backgroundImage: 'url("src/assets/background.png")',
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
       <DesktopIcon
         initialX={20}
         initialY={20}
         icon={
-          <div className="w-8 h-8 relative" style={{ imageRendering: 'pixelated' }}>
+          <div
+            className="w-8 h-8 relative"
+            style={{ imageRendering: "pixelated" }}
+          >
             {/* My Computer - Classic desktop computer */}
             <div className="absolute inset-0">
               {/* Monitor */}
@@ -129,12 +140,15 @@ const Desktop: React.FC = () => {
         label="My Computer"
         onDoubleClick={handleMyComputerOpen}
       />
-      
+
       <DesktopIcon
         initialX={20}
         initialY={120}
         icon={
-          <div className="w-8 h-8 relative" style={{ imageRendering: 'pixelated' }}>
+          <div
+            className="w-8 h-8 relative"
+            style={{ imageRendering: "pixelated" }}
+          >
             {/* Recycle Bin */}
             <div className="absolute inset-0">
               {/* Bin body */}
@@ -154,12 +168,15 @@ const Desktop: React.FC = () => {
         label="Recycle Bin"
         onDoubleClick={handleRecycleBinOpen}
       />
-      
+
       <DesktopIcon
         initialX={20}
         initialY={220}
         icon={
-          <div className="w-8 h-8 relative" style={{ imageRendering: 'pixelated' }}>
+          <div
+            className="w-8 h-8 relative"
+            style={{ imageRendering: "pixelated" }}
+          >
             {/* Notepad */}
             <div className="absolute inset-0">
               {/* Document */}
@@ -180,12 +197,15 @@ const Desktop: React.FC = () => {
         label="Notepad"
         onDoubleClick={handleNotepadOpen}
       />
-      
+
       <DesktopIcon
         initialX={20}
         initialY={320}
         icon={
-          <div className="w-8 h-8 relative" style={{ imageRendering: 'pixelated' }}>
+          <div
+            className="w-8 h-8 relative"
+            style={{ imageRendering: "pixelated" }}
+          >
             {/* Calculator */}
             <div className="absolute inset-0">
               {/* Calculator body */}
@@ -211,19 +231,24 @@ const Desktop: React.FC = () => {
         label="Calculator"
         onDoubleClick={handleCalculatorOpen}
       />
-      
+
       <DesktopIcon
         initialX={120}
         initialY={20}
         icon={
-          <div className="w-8 h-8 relative" style={{ imageRendering: 'pixelated' }}>
+          <div
+            className="w-8 h-8 relative"
+            style={{ imageRendering: "pixelated" }}
+          >
             {/* Internet Explorer */}
             <div className="absolute inset-0">
               {/* Main icon background */}
               <div className="w-6 h-6 bg-blue-600 border border-black absolute top-1 left-1 rounded-sm">
                 {/* "e" letter */}
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-white font-bold text-sm leading-none">e</div>
+                  <div className="text-white font-bold text-sm leading-none">
+                    e
+                  </div>
                 </div>
                 {/* Ring around e */}
                 <div className="absolute inset-0 border-2 border-blue-300 rounded-sm"></div>
@@ -236,12 +261,15 @@ const Desktop: React.FC = () => {
         label="Internet Explorer"
         onDoubleClick={handleInternetExplorerOpen}
       />
-      
+
       <DesktopIcon
         initialX={120}
         initialY={120}
         icon={
-          <div className="w-8 h-8 relative" style={{ imageRendering: 'pixelated' }}>
+          <div
+            className="w-8 h-8 relative"
+            style={{ imageRendering: "pixelated" }}
+          >
             {/* Games */}
             <div className="absolute inset-0">
               {/* Game controller base */}
@@ -262,19 +290,24 @@ const Desktop: React.FC = () => {
         label="Games"
         onDoubleClick={handleGamesOpen}
       />
-      
+
       <DesktopIcon
         initialX={120}
         initialY={220}
         icon={
-          <div className="w-8 h-8 relative" style={{ imageRendering: 'pixelated' }}>
+          <div
+            className="w-8 h-8 relative"
+            style={{ imageRendering: "pixelated" }}
+          >
             {/* Yahoo Messenger */}
             <div className="absolute inset-0">
               {/* Main purple background */}
               <div className="w-6 h-6 bg-purple-600 border border-black absolute top-1 left-1">
                 {/* Y! logo */}
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-white font-bold text-xs leading-none">Y!</div>
+                  <div className="text-white font-bold text-xs leading-none">
+                    Y!
+                  </div>
                 </div>
               </div>
               {/* Chat bubble accent */}
